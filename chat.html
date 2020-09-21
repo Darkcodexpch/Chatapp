@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="chat.css">
+    <!-- Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+    <!-- Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <!-- Firebase authentication -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="message-header">
+            <div class="message-header-img">
+                <img src="./images/download.jpg">
+            </div>
+            <div class="active-user">
+                <h4>Kamran Siddiqui</h4>
+                <h6>3hour ago...</h6>
+            </div>
+            <div class="header-icon">
+                <i class="fa fa-phone"></i>
+                <i class="fa fa-video-camera"></i>
+                <i class="fa fa-sign-out" aria-hidden="true" onclick="logout()"></i></div>
+        </div>
+        <div class="chat-page">
+            <div class="char-message-inbox">
+                <div class="chats">
+                    <!-- <span id="succesMessege">User Connect Succesfully</span> -->
+                    <div class="msg-page">
+                        <div class="recived-chat">
+                            <div class="recived-message" id="main">
+
+                                <!-- <p>salam</p>
+                                <p>w/salam</p>
+                                <p>kese ho</p>
+                                <p>theek hun</p> -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="msg-bottom">
+                    <div class="bottom-icon">
+                        <i class="fa fa-plus-circle"></i>
+                        <i class="fa fa-camera"></i>
+                        <i class="fa fa-microphone"></i>
+                        <i class="fa fa-smile-o"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="write message......" id="usermessage">
+                        <div class="input-group-append">
+                            <a onclick="sentmessage()"><span class="input-group-text" style="cursor: pointer;"><i
+                                        class="fa fa-paper-plane"></i></span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+<!-- Firebase -->
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyDpTOg587XhM-IsWtnfd1nxFth5sodkd0Q",
+        authDomain: "firstchatapp-29ab4.firebaseapp.com",
+        databaseURL: "https://firstchatapp-29ab4.firebaseio.com",
+        projectId: "firstchatapp-29ab4",
+        storageBucket: "firstchatapp-29ab4.appspot.com",
+        messagingSenderId: "312547837946",
+        appId: "1:312547837946:web:735fa06b5840f1885cc643",
+        measurementId: "G-4V5T83KTN6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<script src="app.js"></script>
+
+
+</html>
